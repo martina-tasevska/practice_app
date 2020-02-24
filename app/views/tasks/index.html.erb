@@ -1,0 +1,6 @@
+<ul>
+  <% @tasks.each do |task| %>
+  <li> <%= task.text %></li>
+  <% end %>
+</ul>
+<%= button_to 'Add another task', new_task_path, method: :get %>

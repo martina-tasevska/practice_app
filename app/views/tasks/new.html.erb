@@ -1,0 +1,7 @@
+<%= button_to "Welcome", '/welcome', method: :get %>
+<h1>Add a new task</h1>
+<%= form_for @task do |f| %>
+  <%= f.label :text%><br>
+  <%= f.text_field :text %><br>
+  <%= f.submit %>
+<%end%>
