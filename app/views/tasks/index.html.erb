@@ -3,4 +3,4 @@
   <li> <%= task.text %></li>
   <% end %>
 </ul>
-<%= button_to 'Add another task', new_task_path, method: :get %>
+<%= button_to 'Add another task', new_user_task_path(user_id: session[:user_id]), method: :get %>

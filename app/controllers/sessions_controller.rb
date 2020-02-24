@@ -6,9 +6,9 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to '/todo'
+      redirect_to user_tasks_path(user_id: @user.id)
     else
-      redirect_to '/login'
+      redirect_to login_path
     end
   end
 
@@ -18,8 +18,5 @@ class SessionsController < ApplicationController
   end
 
   def welcome
-  end
-
-  def todo
   end
 end

@@ -4,12 +4,17 @@ class TasksController < ApplicationController
   end
 
   def create
-    @user = User.find(session[:user_id])
-    @task = Task.create(text: params[:task][:text], user: @user)
-    redirect_to '/tasks'
+    @task = Task.create(task_params.merge(user_id: session[:user_id]))
+    redirect_to user_tasks_path(session[:user_id])
   end
 
   def index
     @tasks = Task.where(user_id: session[:user_id])
+  end
+
+  private
+
+  def task_params
+    params.require(:task).permit(:text)
   end
 end
