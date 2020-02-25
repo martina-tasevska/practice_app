@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get 'welcome', to: 'sessions#welcome'
-  get '/todo', to: 'sessions#todo'
+  delete '/logout',  to: 'sessions#logout'
+  delete '/destroy', to: 'tasks#destroy'
   root 'sessions#new'
 
   resources :users do

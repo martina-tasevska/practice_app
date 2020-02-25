@@ -1,0 +1,5 @@
+<%= form_for [:user, @task] do |f| %>
+  <%= f.label 'Edit status' %>
+  <%= f.check_box(:state, :checked => @task.state) %>
+  <%= f.submit("Update") %>
+<% end %>

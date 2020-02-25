@@ -1,4 +1,4 @@
-<%= button_to "Welcome", '/welcome', method: :get %>
+<%= button_to "Log out", logout_path, method: :delete %>
 <h1>Add a new task</h1>
 <%= form_for [:user, @task] do |f| %>
   <%= f.label :text %><br>
